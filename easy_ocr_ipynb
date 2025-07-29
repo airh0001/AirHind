@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import cv2
+import easyocr
+
+image_path = 'plates\scaned_img_2.jpg'
+img= cv2.imread(image_path)
+reader = easyocr.Reader(['en'], gpu = False)
+
+text=reader.readtext(image_path)
+
+for t in text:
+    print(t[1])
+print(text)
+    
